@@ -16,7 +16,7 @@ namespace Money.Tests
 
         [TestCase("GBP")]
         [TestCase("EUR")]
-        public void Add(string currencyCode)
+        public void Addition(string currencyCode)
         {
             var firstAmount = new Money(100.0m, currencyCode);
             var secondAmount = new Money(100.0m, currencyCode);
@@ -40,7 +40,7 @@ namespace Money.Tests
 
         [TestCase("GBP")]
         [TestCase("EUR")]
-        public void Subtract(string currencyCode)
+        public void Subtraction(string currencyCode)
         {
             var firstAmount = new Money(100.0m, currencyCode);
             var secondAmount = new Money(50.50m, currencyCode);
@@ -104,7 +104,7 @@ namespace Money.Tests
             var secondAmount = new Money(100.0m, secondCurrencyCode);
 
             Money result = null;
-            Assert.Throws<InvalidOperationException>(() => result = firstAmount / secondAmount, "Cannot divide two different currency types!");
+            Assert.Throws<InvalidOperationException>(() => result = firstAmount / secondAmount, "Cannot multiply two different currency types!");
         }
     }
 }
