@@ -91,10 +91,10 @@ namespace Money.Tests
             var firstAmount = new Money(100.0m, currencyCode);
             var secondAmount = new Money(10.00m, currencyCode);
 
-            var result = firstAmount / secondAmount;
+            var result = firstAmount * secondAmount;
 
             result.CurrencyCode.Should().Be(currencyCode);
-            result.Amount.Should().Be(10.0m);
+            result.Amount.Should().Be(1000.0m);
         }
 
         [TestCase("GBP", "EUR")]
